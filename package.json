@@ -1,0 +1,13 @@
+{
+  "name": "file-upload",
+  "version": "0.0.0",
+  "description": "A file upload/download application to be used from any computer.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": "git@github.com:cj3kim/file-uploader.git",
+  "author": "cj3kim",
+  "license": "BSD"
+}
