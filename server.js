@@ -6,9 +6,12 @@ var express = require('express')
 
 
 
-app.engine('html', consolidate.mustache);
+app.engine('html', require('hogan-express'))
 app.set('view engine', 'html');
 app.set('views', __dirname + "/views");
+app.set('layout', 'layout') // rendering by default
+//app.set('partials', {head: "head"}) // partails using by default on all pages
+app.enable('view cache')
 
 app.use(express.logger());
 
@@ -17,7 +20,7 @@ environment.appendPath('assets/css');
 
 app.use('/assets', Mincer.createServer(environment));
 
-app.use("/css", express.static(path.join(__dirname, "/assets/css")));
+//app.use("/css", express.static(path.join(__dirname, "/assets/css")));
 app.use("/js", express.static(path.join(__dirname, "/assets/js")));
 
 app.get('/', function(req, res) {
