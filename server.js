@@ -2,6 +2,8 @@ var express = require('express')
   , consolidate = require('consolidate')
   , path = require('path')
   , Mincer = require('mincer')
+  , pg = require('pg')
+  , conString = "tcp://phile@localhost:5432/file_upload"
   , app = express();
 
 
@@ -19,9 +21,10 @@ var environment = new Mincer.Environment();
 environment.appendPath('assets/css');
 
 app.use('/assets', Mincer.createServer(environment));
-
 //app.use("/css", express.static(path.join(__dirname, "/assets/css")));
 app.use("/js", express.static(path.join(__dirname, "/assets/js")));
+
+
 
 app.get('/', function(req, res) {
   res.render('index', {title: "barge"});
@@ -30,6 +33,7 @@ app.get('/', function(req, res) {
 app.get('/upload', function(req, res) {
   res.send("<h1> File Upload Pagge </h1>");
 });
+
 
 app.listen(3000);
 
