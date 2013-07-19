@@ -9,5 +9,5 @@ div#file_drop_area {
 }
 
 div#file_drop_area:hover {
-  border-style: dotted solid;
+  border-style: dotted;
 };
