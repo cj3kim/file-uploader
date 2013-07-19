@@ -1,0 +1,13 @@
+
+div#file_drop_area {
+  width: 400px;
+  height: 400px;
+  background-color: #b1b1b1;
+
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
+div#file_drop_area:hover {
+  border-style: dotted solid;
+};
