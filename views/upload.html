@@ -3,12 +3,20 @@
 
   <p> Below is the file drop area </p>
   <div id='file_drop_area'></div>
-  <script type='text/javascript' src='js/upload.js'>
-    dropArea = document.getElementById("#file_drop_area");
-    dropArea.addEventListener('dragenter', handleDragEnter, false);
-    dropArea.addEventListener('dragleave', handleDragLeave, false);
-    dropArea.addEventListener('drop', handleFileDrop, false);
-  </script>
 
 </div>
+
+<script type='text/javascript' src='js/upload.js'></script>
+
+<script type='text/javascript'>
+  $(document).ready(function () {
+    var dropArea = document.getElementById('file_drop_area');
+    dropArea.addEventListener('drop', handleFileDrop, false);
+    dropArea.addEventListener('dragenter', handleDragEnter, false);
+    dropArea.addEventListener('dragleave', handleDragLeave, false);
+    dropArea.addEventListener('dragover', handleDragOver, false);
+  });
+</script>
+
+
 
