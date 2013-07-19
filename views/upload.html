@@ -3,4 +3,12 @@
 
   <p> Below is the file drop area </p>
   <div id='file_drop_area'></div>
+  <script type='text/javascript' src='js/upload.js'>
+    dropArea = document.getElementById("#file_drop_area");
+    dropArea.addEventListener('dragenter', handleDragEnter, false);
+    dropArea.addEventListener('dragleave', handleDragLeave, false);
+    dropArea.addEventListener('drop', handleFileDrop, false);
+  </script>
+
 </div>
+

@@ -8,6 +8,6 @@ div#file_drop_area {
   -moz-border-radius: 15px;
 }
 
-div#file_drop_area:hover {
+div.dotted {
   border-style: dotted;
 };
