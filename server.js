@@ -19,7 +19,7 @@ app.use('/assets', Mincer.createServer(environment));
 //app.use("/css", express.static(path.join(__dirname, "/assets/css")));
 app.use("/js", express.static(path.join(__dirname, "/assets/js")));
 
-routes.execute(app);
+routes.execute(app, pg);
 
 app.listen(3000);
 console.log("Express server started on port 3000");
