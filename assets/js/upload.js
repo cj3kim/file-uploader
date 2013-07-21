@@ -1,17 +1,35 @@
 function handleFileDrop(e) {
   e.preventDefault();
   e.stopPropagation();
-  var self = this
-    , reader = new FileReader()
-    , file = e.dataTransfer.files.item(0);
+
+  gl = null;
+  file = e.dataTransfer.files.item(0);
+  var self   = this
+    , reader = new FileReader();
 
   reader.onload = function (e) {
     console.log(e.target.result);
-    console.log(self)
-    self.style.background = 'url(' + e.target.result + ') no-repeat center';
+    console.log(e.target.result.length);
+    gl = e.target;
+
+    //arrBuff = new ArrayBuffer(e.target.result.length);
+    //writer = new Uint8Array(arrBuff);
+    //for (var i = 0, len = e.target.result.length; i < len; i++) {
+        //writer[i] = e.target.result.charCodeAt(i);
+    //}
+
+    $.ajax({
+      type: "POST",
+      url: "/imagepost",
+      processData: false,
+      data: e.target.result,
+      success: function () { alert('posted!') },
+      error: function () { alert('not posted')}
+    });
+
   };
 
-  reader.readAsDataURL(file);
+  reader.readAsBinaryString(file);
 
   return false;
 };

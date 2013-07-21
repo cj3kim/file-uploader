@@ -7,7 +7,11 @@ exports.execute = function (app, postgres) {
     res.render('upload');
   });
 
-  app.post('/post-image', function(req, res) {
+  app.post('/imagepost', function(req, res) {
+    console.log("==============");
+    console.log(req.body);
+    console.log("==============");
+
     //request should have binary and meta data
     //post image binary data to pg database
   });

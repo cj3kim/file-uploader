@@ -9,6 +9,7 @@ var express = require('express')
   , app = express();
 
 app.use(express.logger());
+app.use(express.bodyParser()); // very useful to get form data with
 
 viewOptions.execute(app);
 
